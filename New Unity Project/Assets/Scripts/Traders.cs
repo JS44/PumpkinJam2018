@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class Traders : MonoBehaviour {
 
-    FirstPersonController player;
+    public GameObject player;
 
     public Text myText;
     public float maxTradeDistance = 69f;
@@ -13,7 +14,7 @@ public class Traders : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        player = GetComponent<FirstPersonController>();
+
 	}
 	
 	// Update is called once per frame
@@ -23,9 +24,11 @@ public class Traders : MonoBehaviour {
 
     void OnMouseOver()
     {
-        if (abs(player.transform.position - this.transform.postion) < maxTradeDistance)
+        
+        if (Vector3.Distance(player.transform.position, this.transform.position) < maxTradeDistance)
         {
             myText.enabled = true;
+            Debug.Log("Enter");
         }
         else
         {
