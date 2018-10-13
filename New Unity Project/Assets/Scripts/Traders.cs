@@ -34,7 +34,7 @@ public class Traders : MonoBehaviour {
         if (Vector3.Distance(player.transform.position, this.transform.position) < maxTradeDistance)
         {
             textRender.enabled = true;
-            if (playerScript.getWood() > 3 && Input.GetMouseButtonDown(0))
+            if (playerScript.getWood() >= 3 && Input.GetMouseButtonDown(1))
             {
                 playerScript.spendWood(3);
                 playerScript.hurtAxeHP(-0.5f);
