@@ -6,6 +6,8 @@ TagManager:
   tags:
   - DayCycle
   - Floor
+  - Ground
+  - NPCs
   layers:
   - Default
   - TransparentFX

@@ -55,4 +55,4 @@ MonoBehaviour:
   numTrees: 1000
   heightOffset: 2
   radius: 1
-  raycastDistance: 1
+  raycastDistance: 20
