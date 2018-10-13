@@ -8,7 +8,7 @@ public class PlayerScript : MonoBehaviour {
 	public GameObject axeHit;
 	//Vars for the drainables
 	public float maxHP, maxSanity, maxAxeHP, maxOil;
-	float currHP, currSanity, currAxeHP, currOil;
+	float currHP, currSanity, currAxeHP, currOil, currWood;
 	public float maxAxeDPS, axeDegradation, sanityDrain;
 	public float maxBrightness, oilBurnRate, currDrain;
 	float currAxeDPS, currBrightness;
@@ -73,6 +73,10 @@ public class PlayerScript : MonoBehaviour {
 	//Gets/Sets
 	public void hurtHP(float damageReceived) {currHP -= damageReceived;}
 	public void hurtSanity(float sanityLost) {currSanity -= sanityLost;}
-	public float getHP() {return currHP;}
+    public void hurtAxeHP(float axeDamage) {currAxeHP = Mathf.Min(1,Mathf.Max(0,currAxeHP - axeDamage));}
+    public void spendWood(float woodAmount) {currWood = currWood - woodAmount;}
+    public float getHP() {return currHP;}
 	public float getSanity() {return currSanity;}
+    public float getAxeHP() {return currAxeHP;}
+    public float getWood() {return currWood;}
 }

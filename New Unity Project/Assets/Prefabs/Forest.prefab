@@ -52,4 +52,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tree: {fileID: 1947390910738352, guid: cdaccc4c6473c184fba8ebcb759a5322, type: 2}
-  numTrees: 500
+  numTrees: 1000
+  heightOffset: 2
+  radius: 1

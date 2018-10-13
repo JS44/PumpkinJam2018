@@ -6,7 +6,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class DissapearScript : MonoBehaviour {
 
     private GameObject player;
-    private FirstPersonController playerScript;
+    private PlayerScript playerScript;
     public int cyclesToAppear = 1;
 
     private DayNightLight dayTimer;
@@ -23,7 +23,7 @@ public class DissapearScript : MonoBehaviour {
         dayTimer = GameObject.FindObjectOfType<DayNightLight>();
         numCycles = 0;
         addedCycle = false;
-        playerScript = player.GetComponent<FirstPersonController>();
+        playerScript = player.GetComponent<PlayerScript>();
 	}
 	
 	// Update is called once per frame
@@ -56,7 +56,7 @@ public class DissapearScript : MonoBehaviour {
             collectibleRender.enabled = false;
             numCycles = 0;
             addedCycle = true;
-            playerScript.resourceCount++;
+            playerScript.spendWood(-1);
         }
     }
 
