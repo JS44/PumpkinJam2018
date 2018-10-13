@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ShammyScene.unity
     guid: 747e53673f617be44883b2330a4123f3
+  - enabled: 1
+    path: Assets/Scenes/Island.unity
+    guid: 3a90cee51e749f146906236fb1f4bc9e
   m_configObjects: {}
