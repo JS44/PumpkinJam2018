@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class WanderScript : MonoBehaviour {
 
     public Rigidbody rb;
     public MonsterScript monsterForm;
+    private MoveTo enemy;
+    private MeshRenderer mesh;
+    private NavMeshAgent agent;
 
     bool humanForm = true;
     float transformAttempts = 0, transformAttemptsToday = 0;
@@ -13,8 +17,10 @@ public class WanderScript : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-        if (humanForm)
-            StartCoroutine("Wander");
+        mesh = GetComponent<MeshRenderer>();
+        enemy = GetComponent<MoveTo>();
+        agent = GetComponent<NavMeshAgent>();
+        StartCoroutine("Wander");
     }
 
     IEnumerator Wander()
@@ -75,9 +81,12 @@ public class WanderScript : MonoBehaviour {
         monsterForm.monsterModel.enabled = true;
         monsterForm.monsterModel.transform.position = transform.position;
         monsterForm.monsterModel.transform.rotation = transform.rotation;
-        GetComponent<MeshRenderer>().enabled = false;
+        agent.enabled = true;
+        enemy.enabled = true;
+        mesh.enabled = false;
         humanForm = false;
         StopCoroutine(Wander());
+        this.enabled = false;
     }
 
     public void changeForm() { humanForm = true; }
