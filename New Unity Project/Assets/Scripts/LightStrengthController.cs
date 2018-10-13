@@ -13,7 +13,7 @@ public class LightStrengthController : MonoBehaviour {
 	void Start () {
         lamp = this.GetComponent<Light>();
         currentLightStrength = 25;
-        isLightOn = false;
+        isLightOn = true;
     }
 	
 	// Update is called once per frame

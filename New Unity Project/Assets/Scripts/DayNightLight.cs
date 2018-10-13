@@ -62,8 +62,8 @@ public class DayNightLight : MonoBehaviour
 
         if (currentXRot < 90 & currentXRot > 20)
         {
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
 }
