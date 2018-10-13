@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 33373762180304102}
   - component: {fileID: 23346786850435218}
   - component: {fileID: 65185954493556712}
+  - component: {fileID: 208748392840157758}
   m_Layer: 0
   m_Name: WorldLantern
   m_TagString: Untagged
@@ -306,3 +307,18 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!208 &208748392840157758
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1433453818626776}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
