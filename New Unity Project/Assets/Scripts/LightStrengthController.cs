@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightStrenghtController : MonoBehaviour {
+public class LightStrengthController : MonoBehaviour {
 
-    public float lightStrength = 0;
+    public float maxLightStrength = 25;
     Light lamp;
 
 	// Use this for initialization
@@ -14,6 +14,6 @@ public class LightStrenghtController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        lamp.areaSize = new Vector2(lightStrength, lightStrength);
+        lamp.range = maxLightStrength;
 	}
 }
