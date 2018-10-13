@@ -56,7 +56,16 @@ public class Traders : MonoBehaviour {
         
         if (Vector3.Distance(player.transform.position, this.transform.position) < maxTradeDistance)
         {
+<<<<<<< HEAD
             trade();
+=======
+            textRender.enabled = true;
+            if (playerScript.getWood() >= 3 && Input.GetMouseButtonDown(1))
+            {
+                playerScript.spendWood(3);
+                playerScript.hurtAxeHP(-0.5f);
+            }
+>>>>>>> 79d97f78e7dc31c7f6de4faabb524a16d51a1f7b
         }
         else
         {

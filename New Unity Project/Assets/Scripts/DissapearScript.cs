@@ -50,7 +50,7 @@ public class DissapearScript : MonoBehaviour {
     void OnMouseOver()
     {
 
-        if (Vector3.Distance(player.transform.position, this.transform.position) < 3 && Input.GetMouseButtonDown(0))
+        if (Vector3.Distance(player.transform.position, this.transform.position) < 3 && Input.GetMouseButtonDown(1))
         {
             collectibleCollider.enabled = false;
             collectibleRender.enabled = false;

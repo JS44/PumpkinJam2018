@@ -6,9 +6,14 @@ public class PlayerScript : MonoBehaviour {
 
 	public GameManager gm;
 	public GameObject axeHit;
+    private MeshRenderer axeHitMesh;
+    private CapsuleCollider axeHitCollider;
+
+    private LightStrengthController playerLight;
+    private DayNightLight dayTime;
 	//Vars for the drainables
-	public float maxHP, maxSanity, maxAxeHP, maxOil;
-	float currHP, currSanity, currAxeHP, currOil, currWood;
+	public float maxHP, maxSanity, maxAxeHP, maxOil, oilDrain;
+	[SerializeField] float currHP, currSanity, currAxeHP, currOil, currWood;
 	public float maxAxeDPS, axeDegradation, sanityDrain;
 	public float maxBrightness, oilBurnRate, currDrain;
 	float currAxeDPS, currBrightness;
@@ -24,14 +29,19 @@ public class PlayerScript : MonoBehaviour {
 		currAxeDPS = maxAxeDPS;
 		currBrightness = maxBrightness;
 		currDrain = sanityDrain;
-	}
+
+        axeHitMesh = axeHit.GetComponent<MeshRenderer>();
+        axeHitCollider = axeHit.GetComponent<CapsuleCollider>();
+        playerLight = playerLight.GetComponentInChildren<LightStrengthController>();
+        dayTime = GameObject.FindObjectOfType<DayNightLight>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
 		//check if you're still alive
 		if (currHP <= 0) die();
 		//Then check for attacking
-		if (Input.GetMouseButtonDown(1) && !attacking)
+		if (Input.GetMouseButtonDown(0) && !attacking)
 		{
 			Attack();
 		}
@@ -45,7 +55,26 @@ public class PlayerScript : MonoBehaviour {
 			else if (gm.getToD() == "DARK")
 				currSanity -= currDrain;
 		}
-	}
+
+        //Oil Usage and Light Modification
+        if (dayTime.IsNight())
+        {
+            playerLight.enableLight(false);
+        }
+        else
+        {
+            playerLight.enableLight(true);
+        }
+
+        if (playerLight.isLightEnabled())
+        {
+            currOil = Mathf.Max(0, currOil - oilDrain);
+            playerLight.setLight(currOil / maxOil);
+        }
+
+
+
+    }
 
 	//Starts the attack
 	void Attack()
@@ -62,11 +91,13 @@ public class PlayerScript : MonoBehaviour {
 	IEnumerator AttackHitBox()
 	{
 		attacking = true;
-		yield return new WaitForSeconds(.5f);
-		GameObject hitbox = Instantiate(axeHit, transform.forward.normalized, transform.rotation);
-		hitbox.GetComponent<AxeHitbox>().damage = currAxeDPS;
-		yield return new WaitForSeconds(1f);
-		Destroy(hitbox);
+		yield return new WaitForSeconds(.1f);
+        axeHitMesh.enabled = true;
+        axeHitCollider.enabled = true;
+        axeHit.GetComponent<AxeHitbox>().damage = currAxeDPS;
+		yield return new WaitForSeconds(0.2f);
+        axeHitMesh.enabled = false;
+        axeHitCollider.enabled = false;
 		attacking = false;
 	}
 
