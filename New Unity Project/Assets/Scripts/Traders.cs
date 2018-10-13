@@ -6,16 +6,20 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class Traders : MonoBehaviour {
 
-    public GameObject player;
+    private GameObject player;
 
-    public Text myText;
+    public GameObject myText;
+    private MeshRenderer textRender;
+    private TextMesh textMesh;
     public float maxTradeDistance = 69f;
 
 	// Use this for initialization
 	void Start ()
     {
-
-	}
+        player = GameObject.FindGameObjectWithTag("Player");
+        textRender = myText.GetComponent<MeshRenderer>();
+        textMesh = myText.GetComponent<TextMesh>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -27,17 +31,16 @@ public class Traders : MonoBehaviour {
         
         if (Vector3.Distance(player.transform.position, this.transform.position) < maxTradeDistance)
         {
-            myText.enabled = true;
-            Debug.Log("Enter");
+            textRender.enabled = true;
         }
         else
         {
-            myText.enabled = false;
+            textRender.enabled = false;
         }
     }
 
     void OnMouseExit()
     {
-        myText.enabled = false;
+        textRender.enabled = false;
     }
 }
