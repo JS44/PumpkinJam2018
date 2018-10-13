@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4987231927108584}
   - component: {fileID: 33784585330704500}
   - component: {fileID: 23610635835771614}
+  - component: {fileID: 114825274009265546}
   - component: {fileID: 65880743412620110}
   - component: {fileID: 108693266627430598}
   m_Layer: 0
@@ -115,10 +116,10 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.5
     m_Bias: 0.05
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 0.1
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
@@ -134,3 +135,15 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114825274009265546
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1471242654879558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f626b3d319d0a2448360ae6f9bd6994, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLightStrength: 25
