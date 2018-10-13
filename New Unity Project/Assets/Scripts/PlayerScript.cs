@@ -7,9 +7,12 @@ public class PlayerScript : MonoBehaviour {
 	public GameManager gm;
 	public GameObject axeHit;
     private MeshRenderer axeHitMesh;
-    private SphereCollider axeHitCollider;
+    private CapsuleCollider axeHitCollider;
+
+    private LightStrengthController playerLight;
+    private DayNightLight dayTime;
 	//Vars for the drainables
-	public float maxHP, maxSanity, maxAxeHP, maxOil;
+	public float maxHP, maxSanity, maxAxeHP, maxOil, oilDrain;
 	[SerializeField] float currHP, currSanity, currAxeHP, currOil, currWood;
 	public float maxAxeDPS, axeDegradation, sanityDrain;
 	public float maxBrightness, oilBurnRate, currDrain;
@@ -28,8 +31,10 @@ public class PlayerScript : MonoBehaviour {
 		currDrain = sanityDrain;
 
         axeHitMesh = axeHit.GetComponent<MeshRenderer>();
-        axeHitCollider = axeHit.GetComponent<SphereCollider>();
-	}
+        axeHitCollider = axeHit.GetComponent<CapsuleCollider>();
+        playerLight = playerLight.GetComponentInChildren<LightStrengthController>();
+        dayTime = GameObject.FindObjectOfType<DayNightLight>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -50,7 +55,26 @@ public class PlayerScript : MonoBehaviour {
 			else if (gm.getToD() == "DARK")
 				currSanity -= currDrain;
 		}
-	}
+
+        //Oil Usage and Light Modification
+        if (dayTime.IsNight())
+        {
+            playerLight.enableLight(false);
+        }
+        else
+        {
+            playerLight.enableLight(true);
+        }
+
+        if (playerLight.isLightEnabled())
+        {
+            currOil = Mathf.Max(0, currOil - oilDrain);
+            playerLight.setLight(currOil / maxOil);
+        }
+
+
+
+    }
 
 	//Starts the attack
 	void Attack()

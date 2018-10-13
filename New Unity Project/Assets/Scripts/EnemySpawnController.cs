@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class ForestController : MonoBehaviour {
+public class EnemySpawnController : MonoBehaviour {
 
     public GameObject tree;
+    private GameObject player;
     public int numTrees = 50;
     public float heightOffset = 1;
     public float radius = 1;
@@ -13,6 +14,7 @@ public class ForestController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        player = GameObject.FindGameObjectWithTag("Player");
         for (int i = 0; i < numTrees; i++)
         {
             Vector3 pos = new Vector3(Random.Range(-100, 100), 30, Random.Range(-100, 100));
@@ -24,7 +26,6 @@ public class ForestController : MonoBehaviour {
                 if (hit.collider.tag == "Ground")
                 {
                     GameObject newTree = Instantiate(tree, hit.point + Vector3.up * heightOffset, tree.transform.rotation);
-                    newTree.GetComponent<NavMeshObstacle>().carving = true;
                 }
             }
         }

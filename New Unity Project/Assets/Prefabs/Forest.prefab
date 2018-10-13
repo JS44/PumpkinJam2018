@@ -48,10 +48,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1517319727995644}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 047e639fa0c871b4399abe862722bd2a, type: 3}
+  m_Script: {fileID: 11500000, guid: be38f74807586714aa7b6791a5f20dc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tree: {fileID: 1947390910738352, guid: cdaccc4c6473c184fba8ebcb759a5322, type: 2}
   numTrees: 1000
   heightOffset: 2
   radius: 1
+  raycastDistance: 1

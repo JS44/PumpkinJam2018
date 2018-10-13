@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 33234414032906778}
   - component: {fileID: 23473092669292210}
   - component: {fileID: 136373511075584604}
-  - component: {fileID: 114524321463471016}
   - component: {fileID: 195870956946173370}
+  - component: {fileID: 114687379552176404}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -86,7 +86,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1509993477167496}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114524321463471016
+--- !u!114 &114687379552176404
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,10 +94,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1509993477167496}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e29d742062eaef45a53554020f4eec6, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b58ff55f294ba84d84724e5a8dee773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   maxNoticeDistance: 20
   timeBetweenSearch: 10
 --- !u!136 &136373511075584604
