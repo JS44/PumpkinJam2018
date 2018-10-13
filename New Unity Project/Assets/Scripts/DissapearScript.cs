@@ -23,6 +23,7 @@ public class DissapearScript : MonoBehaviour {
         dayTimer = GameObject.FindObjectOfType<DayNightLight>();
         numCycles = 0;
         addedCycle = false;
+        playerScript = player.GetComponent<FirstPersonController>();
 	}
 	
 	// Update is called once per frame

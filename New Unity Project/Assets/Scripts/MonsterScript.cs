@@ -25,5 +25,5 @@ public class MonsterScript : MonoBehaviour {
 
 
 	//monster takes damage
-	public void takeDamage(float damage){currHP -= damage;}
+	public void dealDamage(float damage){currHP -= damage;}
 }
