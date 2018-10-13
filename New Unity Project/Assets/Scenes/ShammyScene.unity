@@ -702,8 +702,8 @@ MonoBehaviour:
   maxHP: 0
   maxSanity: 0
   maxAxeHP: 0
-  maxOil: 0
-  oilDrain: 0
+  maxOil: 25
+  oilDrain: 0.1
   currHP: 0
   currSanity: 0
   currAxeHP: 0
