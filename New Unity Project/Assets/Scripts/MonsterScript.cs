@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MonsterScript : MonoBehaviour {
 
-	public float maxHP, moveSpeed, dps;
+	public float maxHP = 100, moveSpeed = 1, dps = 10;
 	float currHP;
 	public WanderScript humanForm;
 	public MeshRenderer monsterModel;

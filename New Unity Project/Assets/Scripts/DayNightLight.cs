@@ -60,10 +60,10 @@ public class DayNightLight : MonoBehaviour
     {
         float currentXRot = transform.rotation.eulerAngles.x;
 
-        if (currentXRot < 90 & currentXRot > 20)
+        if (currentXRot < 90 && currentXRot > 20)
         {
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
 }
