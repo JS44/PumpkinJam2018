@@ -18,7 +18,7 @@ public class PlayerScript : MonoBehaviour {
 	public float maxAxeDPS, axeDegradation, sanityDrain;
 	public float maxBrightness, oilBurnRate, currDrain;
 	float currAxeDPS, currBrightness;
-
+	
 	bool attacking;
 
 	void Start () {
