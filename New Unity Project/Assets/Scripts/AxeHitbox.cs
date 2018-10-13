@@ -9,6 +9,6 @@ public class AxeHitbox : MonoBehaviour {
 	//axe hitbox is on a layer that only collides with enemies
 	void OnTriggerEnter(Collider other)
 	{
-		other.gameObject.GetComponent<MonsterScript>().dealDamage(damage);
+		other.gameObject.GetComponent<MonsterScript>().takeDamage(damage);
 	}
 }
