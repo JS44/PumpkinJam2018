@@ -36,6 +36,8 @@ public class PlayerScript : MonoBehaviour {
         playerLight = GetComponentInChildren<LightStrengthController>();
         lightingController = GameObject.FindGameObjectWithTag("DayCycle");
         dayTime = lightingController.GetComponent<DayNightLight>();
+
+        gm = GameObject.FindObjectOfType<GameManager>();
     }
 	
 	// Update is called once per frame
