@@ -133,6 +133,9 @@ MonoBehaviour:
   timer: 0
   nightToDayRatio: 0.8
   shouldTimerIncrease: 0
+  sunMaxBrightness: 0.8
+  sun: {fileID: 261336270}
+  moon: {fileID: 1965687267}
 --- !u!1 &193802830
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,51 +252,19 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114367814981937848, guid: 322d966275eb764468a28a5f966526fd,
+        type: 2}
+      propertyPath: numTrees
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 322d966275eb764468a28a5f966526fd, type: 2}
   m_IsPrefabAsset: 0
---- !u!1001 &279275337
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4018035062964478, guid: cdaccc4c6473c184fba8ebcb759a5322, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4018035062964478, guid: cdaccc4c6473c184fba8ebcb759a5322, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4018035062964478, guid: cdaccc4c6473c184fba8ebcb759a5322, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 7.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 4018035062964478, guid: cdaccc4c6473c184fba8ebcb759a5322, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4018035062964478, guid: cdaccc4c6473c184fba8ebcb759a5322, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4018035062964478, guid: cdaccc4c6473c184fba8ebcb759a5322, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4018035062964478, guid: cdaccc4c6473c184fba8ebcb759a5322, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4018035062964478, guid: cdaccc4c6473c184fba8ebcb759a5322, type: 2}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: cdaccc4c6473c184fba8ebcb759a5322, type: 2}
-  m_IsPrefabAsset: 0
+--- !u!1 &261336270 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1547341027101710, guid: 8d2a8532a198405429df09a526e43601,
+    type: 2}
+  m_PrefabInternal: {fileID: 487608157}
 --- !u!1001 &487608157
 Prefab:
   m_ObjectHideFlags: 0
@@ -391,6 +362,11 @@ Prefab:
     - target: {fileID: 4987231927108584, guid: 95a0049dd17aeb741bd3194b39c8fb29, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114825274009265546, guid: 95a0049dd17aeb741bd3194b39c8fb29,
+        type: 2}
+      propertyPath: maxLightStrength
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95a0049dd17aeb741bd3194b39c8fb29, type: 2}
@@ -842,3 +818,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4987231927108584, guid: 95a0049dd17aeb741bd3194b39c8fb29,
     type: 2}
   m_PrefabInternal: {fileID: 770057445}
+--- !u!1 &1965687267 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1365436371496470, guid: 8d2a8532a198405429df09a526e43601,
+    type: 2}
+  m_PrefabInternal: {fileID: 487608157}
